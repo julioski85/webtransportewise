@@ -146,7 +146,6 @@ const translations = {
     'form.message': 'Project details',
     'form.messagePlaceholder': 'Tell us your quantity, route, application, or any special requirement.',
     'form.submit': 'Request information',
-    'form.note': 'This static form is ready for visual use. Connect it to your preferred form handler or CRM endpoint from the hosting panel.',
     'form.success': 'Thanks. Your request is ready to be connected to your preferred lead system.',
 
     'footer.title': 'High-performance belly dumps for demanding oilfield logistics.',
@@ -301,7 +300,6 @@ const translations = {
     'form.message': 'Detalles del proyecto',
     'form.messagePlaceholder': 'Indícanos cantidad, ruta, aplicación o cualquier requerimiento especial.',
     'form.submit': 'Solicitar información',
-    'form.note': 'Este formulario está listo visualmente. Puedes conectarlo desde tu hosting a tu CRM o manejador de formularios preferido.',
     'form.success': 'Gracias. Tu solicitud quedó lista para integrarse con tu sistema de leads preferido.',
 
     'footer.title': 'Belly dumps de alto rendimiento para logística petrolera exigente.',
@@ -323,6 +321,8 @@ const header = document.getElementById('siteHeader');
 const fab = document.getElementById('floatingCta');
 const fabMain = document.getElementById('fabMain');
 const fabWhatsApp = document.getElementById('fabWhatsApp');
+const preloader = document.getElementById('preloader');
+const scrollTopBtn = document.getElementById('scrollTopBtn');
 
 const state = {
   lang: localStorage.getItem('rt_lang') || 'en',
@@ -374,6 +374,11 @@ document.querySelectorAll('.mobile-panel a').forEach((link) => {
 });
 
 const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function hidePreloader() {
+  if (!preloader || preloader.classList.contains('is-hidden')) return;
+  preloader.classList.add('is-hidden');
+}
 
 const observer = new IntersectionObserver(
   (entries) => {
@@ -430,8 +435,13 @@ if (heroFrame && window.innerWidth > 900 && !prefersReduced) {
 }
 
 window.addEventListener('scroll', () => {
-  header.classList.toggle('scrolled', window.scrollY > 12);
+  const pastTop = window.scrollY > 12;
+  header.classList.toggle('scrolled', pastTop);
+  scrollTopBtn?.classList.toggle('visible', window.scrollY > 420);
 }, { passive: true });
+
+header.classList.toggle('scrolled', window.scrollY > 12);
+scrollTopBtn?.classList.toggle('visible', window.scrollY > 420);
 
 fabMain?.addEventListener('click', () => {
   fab.classList.toggle('open');
@@ -449,6 +459,21 @@ fabWhatsApp?.addEventListener('click', () => {
 
 document.addEventListener('click', (e) => {
   if (!fab.contains(e.target)) fab.classList.remove('open');
+});
+
+if (document.readyState === 'complete') {
+  hidePreloader();
+} else {
+  window.addEventListener('load', () => {
+    const delay = prefersReduced ? 0 : 320;
+    window.setTimeout(hidePreloader, delay);
+  }, { once: true });
+}
+
+window.setTimeout(hidePreloader, 1600);
+
+scrollTopBtn?.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: prefersReduced ? 'auto' : 'smooth' });
 });
 
 if (window.lucide) {
