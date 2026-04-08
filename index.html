@@ -17,6 +17,19 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="preloader" id="preloader" aria-hidden="true">
+      <div class="preloader-inner">
+        <img
+          class="preloader-logo"
+          src="https://goldenrod-wasp-684269.hostingersite.com/_astro/logo.DDw0H_Qp.webp"
+          alt="RT logo"
+        />
+        <div class="preloader-track" aria-hidden="true">
+          <span class="preloader-bar"></span>
+        </div>
+      </div>
+    </div>
+
     <div class="site-shell">
       <div class="bg-orb orb-1"></div>
       <div class="bg-orb orb-2"></div>
@@ -512,10 +525,7 @@
                 <textarea name="message" rows="5" data-i18n-placeholder="form.messagePlaceholder" placeholder="Tell us your quantity, route, application, or any special requirement."></textarea>
               </label>
               <button class="btn btn-primary btn-full" type="submit" data-i18n="form.submit">Request information</button>
-              <p class="form-note" data-i18n="form.note">
-                This static form is ready for visual use. Connect it to your preferred form handler or CRM endpoint from
-                the hosting panel.
-              </p>
+              <!-- Form endpoint integration note intentionally kept in codebase only. -->
               <div class="form-success" id="formSuccess" data-i18n="form.success">
                 Thanks. Your request is ready to be connected to your preferred lead system.
               </div>
@@ -525,6 +535,7 @@
       </main>
 
       <footer class="footer section-sm">
+        <div class="footer-glow" aria-hidden="true"></div>
         <div class="container footer-grid">
           <div>
             <img
@@ -543,6 +554,10 @@
           </div>
         </div>
       </footer>
+
+      <button class="scroll-top" id="scrollTop" type="button" aria-label="Scroll to top">
+        <i data-lucide="arrow-up"></i>
+      </button>
 
       <div class="floating-cta" id="floatingCta">
         <button class="fab-option fab-whatsapp" id="fabWhatsApp" aria-label="WhatsApp">
