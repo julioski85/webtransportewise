@@ -6,6 +6,8 @@ const translations = {
     'nav.audience': "Who it's for",
     'nav.contact': 'Contact',
     'nav.quote': 'Get a quote',
+    'nav.mobileTitle': 'Navigation',
+    'nav.mobileSubtitle': 'Find products, compare options, and request a quote.',
     'fab.primary': 'Get a Quote',
 
     'hero.eyebrow': 'Belly Dumps & Sand Hoppers for Oilfield Operations',
@@ -121,6 +123,14 @@ const translations = {
     'trust.author3': 'Dispatch Lead · Sand Logistics Fleet',
     'trust.quote4': '“We compared both materials with clear commercial guidance. The recommendation matched our routes and budget perfectly.”',
     'trust.author4': 'Procurement Manager · Industrial Hauling Group',
+    'trust.quote5': '“We reduced loading bottlenecks on high-volume jobs. The hopper flow and support response improved our dispatch discipline.”',
+    'trust.author5': 'Logistics Director · Basin Materials Network',
+    'trust.quote6': '“Our rental clients asked for these units repeatedly. The spec made handoffs easier and helped us keep utilization high.”',
+    'trust.author6': 'Commercial Lead · Industrial Rental Solutions',
+    'trust.quote7': '“The quote process was clear and fast. We aligned on steel for one route and aluminum for another with no confusion.”',
+    'trust.author7': 'Procurement Supervisor · Southline Energy Transport',
+    'trust.quote8': '“We were focused on uptime and predictable unloading times. This configuration helped us stabilize daily planning.”',
+    'trust.author8': 'Operations Planner · Horizon Frac Logistics',
 
     'contact.eyebrow': 'Lead capture',
     'contact.title': 'Request pricing, inventory, and delivery information.',
@@ -160,6 +170,8 @@ const translations = {
     'nav.audience': 'Para quién es',
     'nav.contact': 'Contacto',
     'nav.quote': 'Cotizar',
+    'nav.mobileTitle': 'Navegación',
+    'nav.mobileSubtitle': 'Explora productos, compara opciones y solicita cotización.',
     'fab.primary': 'Cotizar',
 
     'hero.eyebrow': 'Belly Dumps y Sand Hoppers para operaciones petroleras',
@@ -275,6 +287,14 @@ const translations = {
     'trust.author3': 'Líder de Despacho · Flota de Logística de Arena',
     'trust.quote4': '“Comparamos ambos materiales con una guía comercial clara. La recomendación se ajustó perfecto a nuestras rutas y presupuesto.”',
     'trust.author4': 'Gerente de Compras · Grupo de Transporte Industrial',
+    'trust.quote5': '“Reducimos cuellos de botella de carga en proyectos de alto volumen. El flujo de la tolva y la atención mejoraron nuestra disciplina de despacho.”',
+    'trust.author5': 'Director de Logística · Basin Materials Network',
+    'trust.quote6': '“Nuestros clientes de renta pidieron estas unidades repetidamente. La especificación facilitó entregas y mantuvo alta la utilización.”',
+    'trust.author6': 'Líder Comercial · Industrial Rental Solutions',
+    'trust.quote7': '“El proceso de cotización fue claro y rápido. Definimos acero para una ruta y aluminio para otra sin fricciones.”',
+    'trust.author7': 'Supervisor de Compras · Southline Energy Transport',
+    'trust.quote8': '“Buscábamos disponibilidad operativa y descargas predecibles. Esta configuración ayudó a estabilizar la planeación diaria.”',
+    'trust.author8': 'Planeador de Operaciones · Horizon Frac Logistics',
 
     'contact.eyebrow': 'Captura de leads',
     'contact.title': 'Solicita precios, inventario y condiciones de entrega.',
@@ -323,6 +343,7 @@ const fabMain = document.getElementById('fabMain');
 const fabWhatsApp = document.getElementById('fabWhatsApp');
 const preloader = document.getElementById('preloader');
 const scrollTopBtn = document.getElementById('scrollTopBtn');
+const testimonialsTrack = document.getElementById('testimonialsTrack');
 
 const state = {
   lang: localStorage.getItem('rt_lang') || 'en',
@@ -363,13 +384,18 @@ themeToggle.addEventListener('click', () => applyTheme(state.theme === 'dark' ? 
 
 mobileToggle.addEventListener('click', () => {
   mobilePanel.classList.toggle('open');
-  mobileToggle.textContent = mobilePanel.classList.contains('open') ? '✕' : '☰';
+  const isOpen = mobilePanel.classList.contains('open');
+  mobileToggle.textContent = isOpen ? '✕' : '☰';
+  mobileToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  mobileToggle.setAttribute('aria-expanded', String(isOpen));
 });
 
 document.querySelectorAll('.mobile-panel a').forEach((link) => {
   link.addEventListener('click', () => {
     mobilePanel.classList.remove('open');
     mobileToggle.textContent = '☰';
+    mobileToggle.setAttribute('aria-label', 'Open menu');
+    mobileToggle.setAttribute('aria-expanded', 'false');
   });
 });
 
@@ -431,6 +457,51 @@ if (heroFrame && window.innerWidth > 900 && !prefersReduced) {
   });
   heroFrame.addEventListener('mouseleave', () => {
     heroFrame.style.transform = 'perspective(1100px) rotateY(0deg) rotateX(0deg)';
+  });
+}
+
+if (testimonialsTrack) {
+  const originalItems = Array.from(testimonialsTrack.children);
+  originalItems.forEach((item) => {
+    const clone = item.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    testimonialsTrack.appendChild(clone);
+  });
+
+  let rafId = null;
+  let offset = 0;
+  let lastTime = performance.now();
+  const speed = 0.032;
+  let paused = prefersReduced;
+
+  const loopWidth = testimonialsTrack.scrollWidth / 2;
+
+  const tick = (time) => {
+    if (!paused) {
+      const delta = time - lastTime;
+      offset = (offset + delta * speed) % loopWidth;
+      testimonialsTrack.style.transform = `translate3d(${-offset}px,0,0)`;
+    }
+    lastTime = time;
+    rafId = requestAnimationFrame(tick);
+  };
+
+  testimonialsTrack.addEventListener('mouseenter', () => {
+    if (window.innerWidth > 900) paused = true;
+  });
+  testimonialsTrack.addEventListener('mouseleave', () => {
+    if (!prefersReduced) paused = false;
+  });
+  testimonialsTrack.addEventListener('touchstart', () => {
+    paused = true;
+  }, { passive: true });
+  testimonialsTrack.addEventListener('touchend', () => {
+    if (!prefersReduced) paused = false;
+  }, { passive: true });
+
+  rafId = requestAnimationFrame(tick);
+  window.addEventListener('beforeunload', () => {
+    if (rafId) cancelAnimationFrame(rafId);
   });
 }
 
