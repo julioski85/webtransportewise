@@ -12,10 +12,9 @@ const translations = {
 
     'hero.eyebrow': 'Belly Dumps & Sand Hoppers for Oilfield Operations',
     'hero.title': 'Maximize every trip in the oilfield with high-performance belly dumps.',
-    'hero.text': 'Aluminum and steel units designed for silica sand transport. More payload efficiency, faster unloading, and the durability the gas and oil sector demands.',
-    'hero.note': 'Built for owner-operators, transport fleets, and rental businesses that need productivity under demanding field conditions.',
-    'hero.cta1': 'Get a quote',
-    'hero.cta2': 'See available inventory',
+    'hero.text': 'Aluminum and steel units for silica sand in gas and oil operations. Built to move more with fewer delays.',
+        'hero.cta1': 'Get a quote',
+    'hero.cta2': 'Compare aluminum vs steel',
     'hero.statLabel1': 'Focus',
     'hero.statLabel2': 'Materials',
     'hero.statLabel3': 'Industry',
@@ -40,7 +39,7 @@ const translations = {
 
     'product.eyebrow': 'Product overview',
     'product.title': 'Choose the right configuration for your operation.',
-    'product.text': 'Two commercial paths for different priorities: payload optimization or strong structural value.',
+    'product.text': 'Two commercial paths: aluminum for payload strategy, steel for robust value.',
     'product.aluminumBadge': 'Lower tare / payload-oriented',
     'product.aluminumTitle': 'Premium Aluminum Belly Dump / Sand Hopper',
     'product.aluminumText': 'Designed for operators who want to reduce tare weight and improve payload efficiency without losing a field-ready structure.',
@@ -58,7 +57,7 @@ const translations = {
 
     'compare.eyebrow': 'Aluminum vs. steel',
     'compare.title': 'A clear comparison for smarter purchasing.',
-    'compare.text': 'Final operating specs vary by configuration. Use this as a commercial guide and request the technical sheet for the exact unit.',
+    'compare.text': 'Quick commercial guide. Request the full technical sheet for your exact unit.',
     'compare.cta1': 'Get a quote',
     'compare.cta2': 'See available inventory',
     'compare.col1': 'Feature',
@@ -81,26 +80,26 @@ const translations = {
     'compare.row5c': 'Depends on finish and maintenance plan',
 
     'benefits.eyebrow': 'Operational advantages',
-    'benefits.title': 'Built around the realities of fracking logistics.',
+    'benefits.title': 'Key advantages for fracking logistics.',
     'benefits.card1Title': 'Optimized gravity discharge',
-    'benefits.card1Text': 'Hopper geometry helps material flow efficiently and reduces buildup during unloading.',
+    'benefits.card1Text': 'Faster unload cycles and less buildup in high-volume work.',
     'benefits.card2Title': 'Engineering for rough roads',
-    'benefits.card2Text': 'Chassis and structure are chosen for dirt roads, tough field access, and repetitive industrial use.',
+    'benefits.card2Text': 'Built for rough access roads, repetitive loads, and field uptime.',
     'benefits.card3Title': 'Productivity-first mindset',
     'benefits.card3Text': 'Units are positioned to support uptime, fast cycles, and stronger commercial productivity.',
-    'benefits.card4Title': 'Availability-oriented sales process',
-    'benefits.card4Text': 'Inventory and delivery conditions can be reviewed directly with the commercial team.',
+    'benefits.card4Title': 'Commercial guidance and availability',
+    'benefits.card4Text': 'Fast support to match material, profile, and delivery needs.',
 
     'audience.eyebrow': 'Who these units are for',
     'audience.title': 'Different buyers, one shared priority: profitability.',
     'audience.card1Title': 'Owner-Operators',
-    'audience.card1Text': 'Grow your assets with equipment built to stay productive and support long-term earning capacity.',
+    'audience.card1Text': 'Prioritize payload, cycle speed, and long-term earning potential.',
     'audience.card2Title': 'Transport Companies',
-    'audience.card2Text': 'Standardize your fleet with efficient sand hoppers aligned with demanding commercial operations.',
+    'audience.card2Text': 'Standardize fleet specs for rugged routes and predictable utilization.',
     'audience.card3Title': 'Rental Businesses',
-    'audience.card3Text': 'Add high-demand units with strong resale potential and commercial appeal to your portfolio.',
+    'audience.card3Text': 'Add equipment that stays in demand across oilfield customers.',
     'audience.cta1': 'Get a quote',
-    'audience.cta2': 'See available inventory',
+    'audience.cta2': 'Compare aluminum vs steel',
 
     'inventory.eyebrow': 'Visual inventory section',
     'inventory.title': 'Modern presentation for a strong commercial impression.',
@@ -111,15 +110,15 @@ const translations = {
 
     'trust.eyebrow': 'Trust and commercial support',
     'trust.title': 'Commercial support from Mexico for industrial transportation needs.',
-    'trust.text': 'Ask for availability, commercial conditions, and delivery guidance according to your operation profile, route, and business model.',
+    'trust.text': 'Ask for availability, commercial terms, and delivery guidance based on your operation profile.',
     'trust.item1': 'Commercial guidance for aluminum and steel options',
     'trust.item2': 'Support for owner-operators, fleets, and rental businesses',
     'trust.item3': 'Delivery and availability review based on project needs',
-    'trust.quote1': '“We needed units aligned with heavy field work and commercial speed. The process felt focused on real operation, not generic trailer sales.”',
+    'trust.quote1': '“Focused on real operation, not generic trailer sales.”',
     'trust.author1': 'Operations Manager · Regional Transport Company',
-    'trust.quote2': '“The aluminum option fit our payload strategy, while the steel option opened another fleet line with a more accessible upfront entry point.”',
+    'trust.quote2': '“The aluminum and steel recommendation matched our routes and budget.”',
     'trust.author2': 'Fleet Owner · Oilfield Logistics Contractor',
-    'trust.quote3': '“Unload times improved and dispatch planning became more predictable. That consistency made day-to-day operations easier.”',
+    'trust.quote3': '“Unload times improved and dispatch planning became more predictable.”',
     'trust.author3': 'Dispatch Lead · Sand Logistics Fleet',
     'trust.quote4': '“We compared both materials with clear commercial guidance. The recommendation matched our routes and budget perfectly.”',
     'trust.author4': 'Procurement Manager · Industrial Hauling Group',
@@ -159,7 +158,7 @@ const translations = {
     'form.success': 'Thanks. Your request is ready to be connected to your preferred lead system.',
 
     'footer.title': 'High-performance belly dumps for demanding oilfield logistics.',
-    'footer.link1': 'See available inventory',
+    'footer.link1': 'Compare aluminum vs steel',
     'footer.link2': 'Request a quote',
     'footer.location': 'Commercial support from Mexico'
   },
@@ -176,10 +175,9 @@ const translations = {
 
     'hero.eyebrow': 'Belly Dumps y Sand Hoppers para operaciones petroleras',
     'hero.title': 'Maximiza cada viaje en el campo petrolero con belly dumps de alto rendimiento.',
-    'hero.text': 'Equipos de aluminio y acero diseñados para el transporte de arena sílica. Más eficiencia de carga, menor tiempo de descarga y la durabilidad que exige el sector de gas y petróleo.',
-    'hero.note': 'Pensado para hombre-camión, flotillas y empresas de renta que necesitan productividad bajo condiciones exigentes de campo.',
-    'hero.cta1': 'Cotizar ahora',
-    'hero.cta2': 'Ver inventario disponible',
+    'hero.text': 'Unidades de aluminio y acero para arena sílica en gas y petróleo. Diseñadas para mover más con menos demoras.',
+        'hero.cta1': 'Cotizar ahora',
+    'hero.cta2': 'Comparar aluminio vs acero',
     'hero.statLabel1': 'Enfoque',
     'hero.statLabel2': 'Materiales',
     'hero.statLabel3': 'Industria',
@@ -204,7 +202,7 @@ const translations = {
 
     'product.eyebrow': 'Producto',
     'product.title': 'Elige la configuración adecuada para tu operación.',
-    'product.text': 'Dos caminos comerciales para prioridades distintas: optimizar carga útil o privilegiar valor estructural.',
+    'product.text': 'Dos caminos comerciales: aluminio para carga útil, acero para valor robusto.',
     'product.aluminumBadge': 'Menor tara / enfoque en carga útil',
     'product.aluminumTitle': 'Belly Dump / Sand Hopper Premium de Aluminio',
     'product.aluminumText': 'Diseñado para operadores que quieren reducir tara y mejorar eficiencia de carga sin perder una estructura lista para campo.',
@@ -222,7 +220,7 @@ const translations = {
 
     'compare.eyebrow': 'Aluminio vs. acero',
     'compare.title': 'Comparación clara para comprar con mejor criterio.',
-    'compare.text': 'Las especificaciones finales pueden variar según configuración. Usa esto como guía comercial y solicita la ficha técnica de la unidad exacta.',
+    'compare.text': 'Guía comercial rápida. Solicita la ficha técnica completa de la unidad exacta.',
     'compare.cta1': 'Cotizar ahora',
     'compare.cta2': 'Ver inventario disponible',
     'compare.col1': 'Característica',
@@ -245,26 +243,26 @@ const translations = {
     'compare.row5c': 'Depende del acabado y mantenimiento',
 
     'benefits.eyebrow': 'Ventajas operativas',
-    'benefits.title': 'Diseñados alrededor de la realidad logística del fracking.',
+    'benefits.title': 'Ventajas clave para logística de fracking.',
     'benefits.card1Title': 'Descarga por gravedad optimizada',
-    'benefits.card1Text': 'La geometría de la tolva ayuda a un flujo eficiente y reduce acumulación durante la descarga.',
+    'benefits.card1Text': 'Descargas más rápidas y menos acumulación en operación intensiva.',
     'benefits.card2Title': 'Ingeniería para caminos difíciles',
-    'benefits.card2Text': 'Chasis y estructura pensados para terracería, acceso difícil y uso industrial repetitivo.',
+    'benefits.card2Text': 'Construidos para caminos difíciles, cargas repetitivas y disponibilidad en campo.',
     'benefits.card3Title': 'Mentalidad enfocada en productividad',
     'benefits.card3Text': 'Las unidades están pensadas para apoyar disponibilidad, ciclos rápidos y mayor productividad comercial.',
-    'benefits.card4Title': 'Proceso comercial orientado a disponibilidad',
-    'benefits.card4Text': 'Inventario y condiciones de entrega pueden revisarse directamente con el equipo comercial.',
+    'benefits.card4Title': 'Asesoría comercial y disponibilidad',
+    'benefits.card4Text': 'Respuesta rápida para alinear material, perfil y entrega.',
 
     'audience.eyebrow': 'Para quién son estas unidades',
     'audience.title': 'Compradores distintos, una prioridad compartida: rentabilidad.',
     'audience.card1Title': 'Hombre-Camión',
-    'audience.card1Text': 'Haz crecer tu patrimonio con equipo hecho para mantenerse productivo y sostener tu capacidad de ingreso.',
+    'audience.card1Text': 'Prioriza carga útil, velocidad de ciclo y rentabilidad a largo plazo.',
     'audience.card2Title': 'Empresas de Transporte',
-    'audience.card2Text': 'Estandariza tu flota con sand hoppers eficientes y alineados con operaciones comerciales exigentes.',
+    'audience.card2Text': 'Estandariza especificaciones para rutas exigentes y mejor utilización.',
     'audience.card3Title': 'Rentistas',
-    'audience.card3Text': 'Agrega unidades de alta demanda con buen potencial de reventa y fuerte atractivo comercial.',
+    'audience.card3Text': 'Agrega equipo que se mantiene en demanda entre clientes petroleros.',
     'audience.cta1': 'Cotizar ahora',
-    'audience.cta2': 'Ver inventario disponible',
+    'audience.cta2': 'Comparar aluminio vs acero',
 
     'inventory.eyebrow': 'Sección visual de inventario',
     'inventory.title': 'Presentación moderna para una impresión comercial fuerte.',
@@ -275,15 +273,15 @@ const translations = {
 
     'trust.eyebrow': 'Confianza y respaldo comercial',
     'trust.title': 'Atención comercial desde México para necesidades de transporte industrial.',
-    'trust.text': 'Solicita disponibilidad, condiciones comerciales y guía de entrega según tu perfil de operación, ruta y modelo de negocio.',
+    'trust.text': 'Solicita disponibilidad, condiciones comerciales y guía de entrega según tu perfil de operación.',
     'trust.item1': 'Asesoría comercial para opciones en aluminio y acero',
     'trust.item2': 'Atención a hombre-camión, flotillas y rentistas',
     'trust.item3': 'Revisión de entrega y disponibilidad según el proyecto',
-    'trust.quote1': '“Necesitábamos unidades alineadas al trabajo pesado de campo y a una venta ágil. El proceso se sintió enfocado en operación real, no en venta genérica de remolques.”',
+    'trust.quote1': '“Enfoque en operación real, no en venta genérica de remolques.”',
     'trust.author1': 'Gerente de Operaciones · Empresa Regional de Transporte',
-    'trust.quote2': '“La opción de aluminio encajó con nuestra estrategia de carga útil, mientras que la de acero abrió otra línea de flota con una entrada inicial más accesible.”',
+    'trust.quote2': '“La recomendación entre aluminio y acero se ajustó a rutas y presupuesto.”',
     'trust.author2': 'Dueño de Flotilla · Contratista de logística oilfield',
-    'trust.quote3': '“Los tiempos de descarga mejoraron y la planeación de despacho se volvió más predecible. Esa consistencia facilitó la operación diaria.”',
+    'trust.quote3': '“Mejoraron los tiempos de descarga y la planeación diaria.”',
     'trust.author3': 'Líder de Despacho · Flota de Logística de Arena',
     'trust.quote4': '“Comparamos ambos materiales con una guía comercial clara. La recomendación se ajustó perfecto a nuestras rutas y presupuesto.”',
     'trust.author4': 'Gerente de Compras · Grupo de Transporte Industrial',
@@ -323,7 +321,7 @@ const translations = {
     'form.success': 'Gracias. Tu solicitud quedó lista para integrarse con tu sistema de leads preferido.',
 
     'footer.title': 'Belly dumps de alto rendimiento para logística petrolera exigente.',
-    'footer.link1': 'Ver inventario disponible',
+    'footer.link1': 'Comparar aluminio vs acero',
     'footer.link2': 'Solicitar cotización',
     'footer.location': 'Atención comercial desde México'
   }
@@ -343,7 +341,6 @@ const fabMain = document.getElementById('fabMain');
 const fabWhatsApp = document.getElementById('fabWhatsApp');
 const preloader = document.getElementById('preloader');
 const scrollTopBtn = document.getElementById('scrollTopBtn');
-const testimonialsTrack = document.getElementById('testimonialsTrack');
 
 const state = {
   lang: localStorage.getItem('rt_lang') || 'en',
@@ -417,31 +414,6 @@ const observer = new IntersectionObserver(
 
 document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
-const counters = document.querySelectorAll('.counter');
-const counterObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      const el = entry.target;
-      const target = Number(el.dataset.target || 0);
-      const duration = 1100;
-      const startTime = performance.now();
-      function update(now) {
-        const progress = Math.min((now - startTime) / duration, 1);
-        const value = Math.floor(progress * target);
-        el.textContent = `${value}${target === 100 ? '%' : '+'}`;
-        if (progress < 1) requestAnimationFrame(update);
-        else el.textContent = `${target}${target === 100 ? '%' : '+'}`;
-      }
-      requestAnimationFrame(update);
-      counterObserver.unobserve(el);
-    });
-  },
-  { threshold: 0.4 }
-);
-
-counters.forEach((counter) => counterObserver.observe(counter));
-
 leadForm.addEventListener('submit', (e) => {
   e.preventDefault();
   formSuccess.style.display = 'block';
@@ -457,51 +429,6 @@ if (heroFrame && window.innerWidth > 900 && !prefersReduced) {
   });
   heroFrame.addEventListener('mouseleave', () => {
     heroFrame.style.transform = 'perspective(1100px) rotateY(0deg) rotateX(0deg)';
-  });
-}
-
-if (testimonialsTrack) {
-  const originalItems = Array.from(testimonialsTrack.children);
-  originalItems.forEach((item) => {
-    const clone = item.cloneNode(true);
-    clone.setAttribute('aria-hidden', 'true');
-    testimonialsTrack.appendChild(clone);
-  });
-
-  let rafId = null;
-  let offset = 0;
-  let lastTime = performance.now();
-  const speed = 0.032;
-  let paused = prefersReduced;
-
-  const loopWidth = testimonialsTrack.scrollWidth / 2;
-
-  const tick = (time) => {
-    if (!paused) {
-      const delta = time - lastTime;
-      offset = (offset + delta * speed) % loopWidth;
-      testimonialsTrack.style.transform = `translate3d(${-offset}px,0,0)`;
-    }
-    lastTime = time;
-    rafId = requestAnimationFrame(tick);
-  };
-
-  testimonialsTrack.addEventListener('mouseenter', () => {
-    if (window.innerWidth > 900) paused = true;
-  });
-  testimonialsTrack.addEventListener('mouseleave', () => {
-    if (!prefersReduced) paused = false;
-  });
-  testimonialsTrack.addEventListener('touchstart', () => {
-    paused = true;
-  }, { passive: true });
-  testimonialsTrack.addEventListener('touchend', () => {
-    if (!prefersReduced) paused = false;
-  }, { passive: true });
-
-  rafId = requestAnimationFrame(tick);
-  window.addEventListener('beforeunload', () => {
-    if (rafId) cancelAnimationFrame(rafId);
   });
 }
 
