@@ -59,18 +59,22 @@
               <span class="theme-icon theme-moon">☾</span>
             </button>
             <a class="btn btn-primary nav-cta" href="#contact" data-i18n="nav.quote">Get a quote</a>
-            <button class="icon-btn mobile-toggle" id="mobileToggle" type="button" aria-label="Open menu">☰</button>
+            <button class="icon-btn mobile-toggle" id="mobileToggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
           </div>
         </div>
 
         <div class="mobile-panel" id="mobilePanel">
           <div class="container mobile-nav-links">
+            <div class="mobile-panel-head">
+              <span class="mobile-panel-kicker" data-i18n="nav.mobileTitle">Navigation</span>
+              <p data-i18n="nav.mobileSubtitle">Find products, compare options, and request a quote.</p>
+            </div>
             <a data-i18n="nav.products" href="#product">Products</a>
             <a data-i18n="nav.compare" href="#compare">Compare</a>
             <a data-i18n="nav.benefits" href="#benefits">Benefits</a>
             <a data-i18n="nav.audience" href="#audience">Who it's for</a>
             <a data-i18n="nav.contact" href="#contact">Contact</a>
-            <a class="btn btn-primary" href="#contact" data-i18n="nav.quote">Get a quote</a>
+            <a class="btn btn-primary mobile-nav-cta" href="#contact" data-i18n="nav.quote">Get a quote</a>
           </div>
         </div>
       </header>
@@ -291,6 +295,43 @@
                     </tr>
                   </tbody>
                 </table>
+                <div class="compare-mobile-cards">
+                  <article class="compare-mobile-card">
+                    <h3 data-i18n="compare.row1a">Payload efficiency</h3>
+                    <div class="compare-mobile-values">
+                      <p><span data-i18n="compare.col2">Premium Aluminum</span><strong data-i18n="compare.row1b">Higher potential due to lower tare weight</strong></p>
+                      <p><span data-i18n="compare.col3">Efficiency Steel</span><strong data-i18n="compare.row1c">Balanced, depending on spec and route</strong></p>
+                    </div>
+                  </article>
+                  <article class="compare-mobile-card">
+                    <h3 data-i18n="compare.row2a">Vehicle weight</h3>
+                    <div class="compare-mobile-values">
+                      <p><span data-i18n="compare.col2">Premium Aluminum</span><strong data-i18n="compare.row2b">Lower</strong></p>
+                      <p><span data-i18n="compare.col3">Efficiency Steel</span><strong data-i18n="compare.row2c">Higher</strong></p>
+                    </div>
+                  </article>
+                  <article class="compare-mobile-card">
+                    <h3 data-i18n="compare.row3a">Initial investment</h3>
+                    <div class="compare-mobile-values">
+                      <p><span data-i18n="compare.col2">Premium Aluminum</span><strong data-i18n="compare.row3b">Higher upfront</strong></p>
+                      <p><span data-i18n="compare.col3">Efficiency Steel</span><strong data-i18n="compare.row3c">More accessible upfront</strong></p>
+                    </div>
+                  </article>
+                  <article class="compare-mobile-card">
+                    <h3 data-i18n="compare.row4a">Ideal for</h3>
+                    <div class="compare-mobile-values">
+                      <p><span data-i18n="compare.col2">Premium Aluminum</span><strong data-i18n="compare.row4b">Owner-operators and fleets focused on payload and fast cycles</strong></p>
+                      <p><span data-i18n="compare.col3">Efficiency Steel</span><strong data-i18n="compare.row4c">Companies seeking rugged value and standardization</strong></p>
+                    </div>
+                  </article>
+                  <article class="compare-mobile-card">
+                    <h3 data-i18n="compare.row5a">Corrosion profile</h3>
+                    <div class="compare-mobile-values">
+                      <p><span data-i18n="compare.col2">Premium Aluminum</span><strong data-i18n="compare.row5b">Favorable in demanding environments</strong></p>
+                      <p><span data-i18n="compare.col3">Efficiency Steel</span><strong data-i18n="compare.row5c">Depends on finish and maintenance plan</strong></p>
+                    </div>
+                  </article>
+                </div>
               </div>
             </div>
           </div>
@@ -424,7 +465,10 @@
                 <li data-i18n="trust.item3">Delivery and availability review based on project needs</li>
               </ul>
             </div>
-            <div class="testimonials reveal" aria-label="Customer testimonials">
+            <div class="testimonials-wrap reveal" aria-label="Customer testimonials">
+              <div class="testimonials-fade fade-left" aria-hidden="true"></div>
+              <div class="testimonials-fade fade-right" aria-hidden="true"></div>
+              <div class="testimonials-track" id="testimonialsTrack">
               <article class="testimonial glass">
                 <p data-i18n="trust.quote1">
                   “We needed units aligned with heavy field work and commercial speed. The process felt focused on real
@@ -451,6 +495,31 @@
                 </p>
                 <strong data-i18n="trust.author4">Procurement Manager · Industrial Hauling Group</strong>
               </article>
+              <article class="testimonial glass">
+                <p data-i18n="trust.quote5">
+                  “We reduced loading bottlenecks on high-volume jobs. The hopper flow and support response improved our dispatch discipline.”
+                </p>
+                <strong data-i18n="trust.author5">Logistics Director · Basin Materials Network</strong>
+              </article>
+              <article class="testimonial glass">
+                <p data-i18n="trust.quote6">
+                  “Our rental clients asked for these units repeatedly. The spec made handoffs easier and helped us keep utilization high.”
+                </p>
+                <strong data-i18n="trust.author6">Commercial Lead · Industrial Rental Solutions</strong>
+              </article>
+              <article class="testimonial glass">
+                <p data-i18n="trust.quote7">
+                  “The quote process was clear and fast. We aligned on steel for one route and aluminum for another with no confusion.”
+                </p>
+                <strong data-i18n="trust.author7">Procurement Supervisor · Southline Energy Transport</strong>
+              </article>
+              <article class="testimonial glass">
+                <p data-i18n="trust.quote8">
+                  “We were focused on uptime and predictable unloading times. This configuration helped us stabilize daily planning.”
+                </p>
+                <strong data-i18n="trust.author8">Operations Planner · Horizon Frac Logistics</strong>
+              </article>
+              </div>
             </div>
           </div>
         </section>
