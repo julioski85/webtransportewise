@@ -6,6 +6,7 @@ const translations = {
     'nav.audience': "Who it's for",
     'nav.contact': 'Contact',
     'nav.quote': 'Get a quote',
+    'fab.primary': 'Get a Quote',
 
     'hero.eyebrow': 'Belly Dumps & Sand Hoppers for Oilfield Operations',
     'hero.title': 'Maximize every trip in the oilfield with high-performance belly dumps.',
@@ -156,6 +157,7 @@ const translations = {
     'nav.audience': 'Para quién es',
     'nav.contact': 'Contacto',
     'nav.quote': 'Cotizar',
+    'fab.primary': 'Cotizar',
 
     'hero.eyebrow': 'Belly Dumps y Sand Hoppers para operaciones petroleras',
     'hero.title': 'Maximiza cada viaje en el campo petrolero con belly dumps de alto rendimiento.',
@@ -308,6 +310,11 @@ const mobileToggle = document.getElementById('mobileToggle');
 const mobilePanel = document.getElementById('mobilePanel');
 const leadForm = document.getElementById('leadForm');
 const formSuccess = document.getElementById('formSuccess');
+const heroFrame = document.querySelector('.hero-frame');
+const header = document.getElementById('siteHeader');
+const fab = document.getElementById('floatingCta');
+const fabMain = document.getElementById('fabMain');
+const fabWhatsApp = document.getElementById('fabWhatsApp');
 
 const state = {
   lang: localStorage.getItem('rt_lang') || 'en',
@@ -354,13 +361,15 @@ document.querySelectorAll('.mobile-panel a').forEach((link) => {
   });
 });
 
+const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) entry.target.classList.add('visible');
     });
   },
-  { threshold: 0.18 }
+  { threshold: 0.15, rootMargin: '0px 0px -8% 0px' }
 );
 
 document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
@@ -372,13 +381,12 @@ const counterObserver = new IntersectionObserver(
       if (!entry.isIntersecting) return;
       const el = entry.target;
       const target = Number(el.dataset.target || 0);
-      let start = 0;
-      const duration = 1200;
+      const duration = 1100;
       const startTime = performance.now();
       function update(now) {
         const progress = Math.min((now - startTime) / duration, 1);
         const value = Math.floor(progress * target);
-        el.textContent = `${value}${target === 100 ? '%' : target === 24 ? '+' : '+'}`;
+        el.textContent = `${value}${target === 100 ? '%' : '+'}`;
         if (progress < 1) requestAnimationFrame(update);
         else el.textContent = `${target}${target === 100 ? '%' : '+'}`;
       }
@@ -386,7 +394,7 @@ const counterObserver = new IntersectionObserver(
       counterObserver.unobserve(el);
     });
   },
-  { threshold: 0.45 }
+  { threshold: 0.4 }
 );
 
 counters.forEach((counter) => counterObserver.observe(counter));
@@ -397,15 +405,40 @@ leadForm.addEventListener('submit', (e) => {
   leadForm.reset();
 });
 
-const heroFrame = document.querySelector('.hero-frame');
-if (heroFrame && window.innerWidth > 900) {
+if (heroFrame && window.innerWidth > 900 && !prefersReduced) {
   heroFrame.addEventListener('mousemove', (e) => {
     const rect = heroFrame.getBoundingClientRect();
     const x = (e.clientX - rect.left) / rect.width - 0.5;
     const y = (e.clientY - rect.top) / rect.height - 0.5;
-    heroFrame.style.transform = `perspective(1200px) rotateY(${x * 6}deg) rotateX(${y * -5}deg)`;
+    heroFrame.style.transform = `perspective(1100px) rotateY(${x * 4}deg) rotateX(${y * -3.5}deg)`;
   });
   heroFrame.addEventListener('mouseleave', () => {
-    heroFrame.style.transform = 'perspective(1200px) rotateY(0deg) rotateX(0deg)';
+    heroFrame.style.transform = 'perspective(1100px) rotateY(0deg) rotateX(0deg)';
   });
+}
+
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 12);
+}, { passive: true });
+
+fabMain?.addEventListener('click', () => {
+  fab.classList.toggle('open');
+  if (!fab.classList.contains('open')) return;
+  setTimeout(() => {
+    window.location.href = '#contact';
+  }, 120);
+});
+
+fabWhatsApp?.addEventListener('click', () => {
+  const placeholderNumber = '5210000000000';
+  const text = encodeURIComponent(state.lang === 'es' ? 'Hola, quiero cotizar un Belly Dump / Sand Hopper.' : 'Hello, I would like a quote for a Belly Dump / Sand Hopper.');
+  window.open(`https://wa.me/${placeholderNumber}?text=${text}`, '_blank', 'noopener,noreferrer');
+});
+
+document.addEventListener('click', (e) => {
+  if (!fab.contains(e.target)) fab.classList.remove('open');
+});
+
+if (window.lucide) {
+  window.lucide.createIcons();
 }

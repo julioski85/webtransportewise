@@ -22,7 +22,7 @@
       <div class="bg-orb orb-2"></div>
       <div class="bg-grid"></div>
 
-      <header class="header glass">
+      <header class="header glass" id="siteHeader">
         <div class="container nav-wrap">
           <a href="#top" class="brand" aria-label="RT home">
             <img
@@ -63,34 +63,37 @@
       </header>
 
       <main id="top">
-        <section class="hero section">
+        <section class="hero section section-divider">
           <div class="container hero-grid">
-            <div class="hero-copy reveal">
+            <div class="hero-copy reveal hero-reveal-group">
               <div class="eyebrow" data-i18n="hero.eyebrow">Belly Dumps & Sand Hoppers for Oilfield Operations</div>
-              <h1 data-i18n="hero.title">Maximize every trip in the oilfield with high-performance belly dumps.</h1>
-              <p class="lead" data-i18n="hero.text">
+              <h1 class="reveal stagger-1" data-i18n="hero.title">Maximize every trip in the oilfield with high-performance belly dumps.</h1>
+              <p class="lead reveal stagger-2" data-i18n="hero.text">
                 Aluminum and steel units designed for silica sand transport. More payload efficiency, faster unloading,
                 and the durability the gas and oil sector demands.
               </p>
-              <p class="sublead" data-i18n="hero.note">
+              <p class="sublead reveal stagger-3" data-i18n="hero.note">
                 Built for owner-operators, transport fleets, and rental businesses that need productivity under
                 demanding field conditions.
               </p>
-              <div class="hero-actions">
+              <div class="hero-actions reveal stagger-3">
                 <a class="btn btn-primary" href="#contact" data-i18n="hero.cta1">Get a quote</a>
                 <a class="btn btn-secondary" href="#inventory" data-i18n="hero.cta2">See available inventory</a>
               </div>
 
               <div class="hero-stats">
                 <div class="stat-card glass reveal stagger-1">
+                  <i data-lucide="gauge" class="small-icon"></i>
                   <span class="stat-kicker" data-i18n="hero.statLabel1">Focus</span>
                   <strong data-i18n="hero.stat1">Higher payload efficiency</strong>
                 </div>
                 <div class="stat-card glass reveal stagger-2">
+                  <i data-lucide="layers" class="small-icon"></i>
                   <span class="stat-kicker" data-i18n="hero.statLabel2">Materials</span>
                   <strong data-i18n="hero.stat2">Aluminum and steel options</strong>
                 </div>
                 <div class="stat-card glass reveal stagger-3">
+                  <i data-lucide="factory" class="small-icon"></i>
                   <span class="stat-kicker" data-i18n="hero.statLabel3">Industry</span>
                   <strong data-i18n="hero.stat3">Configured for gas & oil logistics</strong>
                 </div>
@@ -119,22 +122,25 @@
           </div>
         </section>
 
-        <section class="section pain-section">
-          <div class="container split-grid">
+        <section class="section pain-section section-divider">
+          <div class="container split-grid equal-grid">
             <div class="content-block reveal">
               <div class="eyebrow" data-i18n="pain.eyebrow">Where profitability gets lost</div>
               <h2 data-i18n="pain.title">Tired of losing money to weight limits, slow unloading, or downtime?</h2>
               <p class="lead-sm" data-i18n="pain.text">In fracking, every ton matters and every delay costs money.</p>
               <div class="pain-points">
                 <article class="mini-card glass reveal stagger-1">
+                  <i data-lucide="timer" class="small-icon"></i>
                   <h3 data-i18n="pain.card1Title">Lost cycles</h3>
                   <p data-i18n="pain.card1Text">Silica sand demand does not wait for equipment stuck in the shop.</p>
                 </article>
                 <article class="mini-card glass reveal stagger-2">
+                  <i data-lucide="shield-alert" class="small-icon"></i>
                   <h3 data-i18n="pain.card2Title">Compliance pressure</h3>
                   <p data-i18n="pain.card2Text">You need units aligned with weight regulations and field requirements.</p>
                 </article>
                 <article class="mini-card glass reveal stagger-3">
+                  <i data-lucide="trending-down" class="small-icon"></i>
                   <h3 data-i18n="pain.card3Title">Poor ROI</h3>
                   <p data-i18n="pain.card3Text">A bad spec can reduce payload, daily trips, and long-term profitability.</p>
                 </article>
@@ -155,7 +161,7 @@
           </div>
         </section>
 
-        <section id="product" class="section">
+        <section id="product" class="section section-divider">
           <div class="container">
             <div class="section-head reveal center">
               <div class="eyebrow" data-i18n="product.eyebrow">Product overview</div>
@@ -214,9 +220,9 @@
           </div>
         </section>
 
-        <section id="compare" class="section compare-section">
+        <section id="compare" class="section compare-section section-divider">
           <div class="container">
-            <div class="compare-box glass reveal">
+            <div class="compare-box glass reveal equal-grid">
               <div class="compare-copy">
                 <div class="eyebrow" data-i18n="compare.eyebrow">Aluminum vs. steel</div>
                 <h2 data-i18n="compare.title">A clear comparison for smarter purchasing.</h2>
@@ -272,7 +278,7 @@
           </div>
         </section>
 
-        <section id="benefits" class="section benefits-section">
+        <section id="benefits" class="section benefits-section section-divider">
           <div class="container">
             <div class="section-head reveal center">
               <div class="eyebrow" data-i18n="benefits.eyebrow">Operational advantages</div>
@@ -280,28 +286,28 @@
             </div>
             <div class="benefits-grid">
               <article class="benefit-card glass reveal">
-                <span class="benefit-icon">↘</span>
+                <span class="benefit-icon"><i data-lucide="arrow-down-right"></i></span>
                 <h3 data-i18n="benefits.card1Title">Optimized gravity discharge</h3>
                 <p data-i18n="benefits.card1Text">
                   Hopper geometry helps material flow efficiently and reduces buildup during unloading.
                 </p>
               </article>
               <article class="benefit-card glass reveal stagger-1">
-                <span class="benefit-icon">▣</span>
+                <span class="benefit-icon"><i data-lucide="construction"></i></span>
                 <h3 data-i18n="benefits.card2Title">Engineering for rough roads</h3>
                 <p data-i18n="benefits.card2Text">
                   Chassis and structure are chosen for dirt roads, tough field access, and repetitive industrial use.
                 </p>
               </article>
               <article class="benefit-card glass reveal stagger-2">
-                <span class="benefit-icon">⌁</span>
+                <span class="benefit-icon"><i data-lucide="zap"></i></span>
                 <h3 data-i18n="benefits.card3Title">Productivity-first mindset</h3>
                 <p data-i18n="benefits.card3Text">
                   Units are positioned to support uptime, fast cycles, and stronger commercial productivity.
                 </p>
               </article>
               <article class="benefit-card glass reveal stagger-3">
-                <span class="benefit-icon">✓</span>
+                <span class="benefit-icon"><i data-lucide="badge-check"></i></span>
                 <h3 data-i18n="benefits.card4Title">Availability-oriented sales process</h3>
                 <p data-i18n="benefits.card4Text">
                   Inventory and delivery conditions can be reviewed directly with the commercial team.
@@ -311,7 +317,7 @@
           </div>
         </section>
 
-        <section id="audience" class="section audience-section">
+        <section id="audience" class="section audience-section section-divider">
           <div class="container">
             <div class="section-head reveal center">
               <div class="eyebrow" data-i18n="audience.eyebrow">Who these units are for</div>
@@ -320,18 +326,21 @@
 
             <div class="audience-grid">
               <article class="audience-card glass reveal">
+                <i data-lucide="user-circle" class="small-icon"></i>
                 <h3 data-i18n="audience.card1Title">Owner-Operators</h3>
                 <p data-i18n="audience.card1Text">
                   Grow your assets with equipment built to stay productive and support long-term earning capacity.
                 </p>
               </article>
               <article class="audience-card glass reveal stagger-1">
+                <i data-lucide="truck" class="small-icon"></i>
                 <h3 data-i18n="audience.card2Title">Transport Companies</h3>
                 <p data-i18n="audience.card2Text">
                   Standardize your fleet with efficient sand hoppers aligned with demanding commercial operations.
                 </p>
               </article>
               <article class="audience-card glass reveal stagger-2">
+                <i data-lucide="building-2" class="small-icon"></i>
                 <h3 data-i18n="audience.card3Title">Rental Businesses</h3>
                 <p data-i18n="audience.card3Text">
                   Add high-demand units with strong resale potential and commercial appeal to your portfolio.
@@ -346,8 +355,8 @@
           </div>
         </section>
 
-        <section id="inventory" class="section inventory-section">
-          <div class="container inventory-grid">
+        <section id="inventory" class="section inventory-section section-divider">
+          <div class="container inventory-grid equal-grid">
             <div class="inventory-copy reveal">
               <div class="eyebrow" data-i18n="inventory.eyebrow">Visual inventory section</div>
               <h2 data-i18n="inventory.title">Modern presentation for a strong commercial impression.</h2>
@@ -379,8 +388,8 @@
           </div>
         </section>
 
-        <section class="section trust-section">
-          <div class="container trust-grid">
+        <section class="section trust-section section-divider">
+          <div class="container trust-grid equal-grid">
             <div class="trust-copy reveal">
               <div class="eyebrow" data-i18n="trust.eyebrow">Trust and commercial support</div>
               <h2 data-i18n="trust.title">Commercial support from Mexico for industrial transportation needs.</h2>
@@ -414,7 +423,7 @@
         </section>
 
         <section id="contact" class="section contact-section">
-          <div class="container contact-grid">
+          <div class="container contact-grid equal-grid">
             <div class="contact-copy reveal">
               <div class="eyebrow" data-i18n="contact.eyebrow">Lead capture</div>
               <h2 data-i18n="contact.title">Request pricing, inventory, and delivery information.</h2>
@@ -514,8 +523,20 @@
           </div>
         </div>
       </footer>
+
+      <div class="floating-cta" id="floatingCta">
+        <button class="fab-option fab-whatsapp" id="fabWhatsApp" aria-label="WhatsApp">
+          <i data-lucide="message-circle"></i>
+          <span>WhatsApp</span>
+        </button>
+        <button class="fab-main" id="fabMain" type="button">
+          <i data-lucide="phone-call"></i>
+          <span data-i18n="fab.primary">Get a Quote</span>
+        </button>
+      </div>
     </div>
 
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script src="script.js"></script>
   </body>
 </html>
