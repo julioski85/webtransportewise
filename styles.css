@@ -355,9 +355,10 @@ body.dark .stat-card {
 .hero-frame img { width: 100%; min-height: 590px; object-fit: cover; border-radius: 22px; }
 .hero-media-overlay {
   position: absolute; left: 30px; right: 30px; bottom: 30px;
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;
 }
 .overlay-card { padding: 14px 16px; border-radius: 18px; border-color: color-mix(in srgb, var(--tech-blue) 35%, var(--line)); }
+.overlay-card { min-width: 0; }
 .overlay-card strong { display: block; margin-top: 6px; font-size: .98rem; }
 .floating-tag {
   position: absolute; top: 18px; right: -16px;
@@ -818,7 +819,7 @@ body.dark .lead-form input, body.dark .lead-form select, body.dark .lead-form te
     box-shadow: 0 16px 32px rgba(169, 33, 35, 0.28);
   }
   .header { width: min(1240px, calc(100% - 14px)); }
-  .hero-media-overlay, .form-row, .gallery-grid { grid-template-columns: 1fr; }
+  .form-row, .gallery-grid { grid-template-columns: 1fr; }
   .image-stack { min-height: 470px; }
 }
 
@@ -840,6 +841,7 @@ body.dark .lead-form input, body.dark .lead-form select, body.dark .lead-form te
     left: 14px;
     right: 14px;
     bottom: 14px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px;
   }
   .overlay-card {
