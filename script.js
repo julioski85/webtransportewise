@@ -117,6 +117,10 @@ const translations = {
     'trust.author1': 'Operations Manager · Regional Transport Company',
     'trust.quote2': '“The aluminum option fit our payload strategy, while the steel option opened another fleet line with a more accessible upfront entry point.”',
     'trust.author2': 'Fleet Owner · Oilfield Logistics Contractor',
+    'trust.quote3': '“Unload times improved and dispatch planning became more predictable. That consistency made day-to-day operations easier.”',
+    'trust.author3': 'Dispatch Lead · Sand Logistics Fleet',
+    'trust.quote4': '“We compared both materials with clear commercial guidance. The recommendation matched our routes and budget perfectly.”',
+    'trust.author4': 'Procurement Manager · Industrial Hauling Group',
 
     'contact.eyebrow': 'Lead capture',
     'contact.title': 'Request pricing, inventory, and delivery information.',
@@ -268,6 +272,10 @@ const translations = {
     'trust.author1': 'Gerente de Operaciones · Empresa Regional de Transporte',
     'trust.quote2': '“La opción de aluminio encajó con nuestra estrategia de carga útil, mientras que la de acero abrió otra línea de flota con una entrada inicial más accesible.”',
     'trust.author2': 'Dueño de Flotilla · Contratista de logística oilfield',
+    'trust.quote3': '“Los tiempos de descarga mejoraron y la planeación de despacho se volvió más predecible. Esa consistencia facilitó la operación diaria.”',
+    'trust.author3': 'Líder de Despacho · Flota de Logística de Arena',
+    'trust.quote4': '“Comparamos ambos materiales con una guía comercial clara. La recomendación se ajustó perfecto a nuestras rutas y presupuesto.”',
+    'trust.author4': 'Gerente de Compras · Grupo de Transporte Industrial',
 
     'contact.eyebrow': 'Captura de leads',
     'contact.title': 'Solicita precios, inventario y condiciones de entrega.',
@@ -315,6 +323,8 @@ const header = document.getElementById('siteHeader');
 const fab = document.getElementById('floatingCta');
 const fabMain = document.getElementById('fabMain');
 const fabWhatsApp = document.getElementById('fabWhatsApp');
+const testimonialTrack = document.getElementById('testimonialTrack');
+const testimonialSlider = document.getElementById('testimonialSlider');
 
 const state = {
   lang: localStorage.getItem('rt_lang') || 'en',
@@ -337,6 +347,10 @@ function applyLang(lang) {
   document.querySelectorAll('[data-i18n-placeholder]').forEach((node) => {
     const key = node.getAttribute('data-i18n-placeholder');
     if (map[key]) node.setAttribute('placeholder', map[key]);
+  });
+  document.querySelectorAll('[data-label-i18n]').forEach((node) => {
+    const key = node.getAttribute('data-label-i18n');
+    if (map[key]) node.setAttribute('data-label', map[key]);
   });
   langToggle.textContent = lang === 'en' ? 'ES' : 'EN';
   localStorage.setItem('rt_lang', lang);
@@ -405,6 +419,43 @@ leadForm.addEventListener('submit', (e) => {
   leadForm.reset();
 });
 
+function initTestimonialSlider() {
+  if (!testimonialTrack || !testimonialSlider || prefersReduced) return;
+  const originalItems = Array.from(testimonialTrack.children);
+  if (!originalItems.length) return;
+  originalItems.forEach((item) => {
+    const clone = item.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    testimonialTrack.appendChild(clone);
+  });
+
+  let offset = 0;
+  let rafId = null;
+  let paused = false;
+  const speed = window.innerWidth < 640 ? 0.23 : 0.34;
+  const loopWidth = testimonialTrack.scrollWidth / 2;
+
+  const tick = () => {
+    if (!paused) {
+      offset += speed;
+      if (offset >= loopWidth) offset = 0;
+      testimonialTrack.style.transform = `translateX(${-offset}px)`;
+    }
+    rafId = requestAnimationFrame(tick);
+  };
+
+  testimonialSlider.addEventListener('mouseenter', () => { paused = true; });
+  testimonialSlider.addEventListener('mouseleave', () => { paused = false; });
+  testimonialSlider.addEventListener('focusin', () => { paused = true; });
+  testimonialSlider.addEventListener('focusout', () => { paused = false; });
+
+  rafId = requestAnimationFrame(tick);
+
+  window.addEventListener('beforeunload', () => {
+    if (rafId) cancelAnimationFrame(rafId);
+  });
+}
+
 if (heroFrame && window.innerWidth > 900 && !prefersReduced) {
   heroFrame.addEventListener('mousemove', (e) => {
     const rect = heroFrame.getBoundingClientRect();
@@ -442,3 +493,5 @@ document.addEventListener('click', (e) => {
 if (window.lucide) {
   window.lucide.createIcons();
 }
+
+initTestimonialSlider();
