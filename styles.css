@@ -786,10 +786,36 @@ body.dark .lead-form input, body.dark .lead-form select, body.dark .lead-form te
   }
   .mobile-nav-links .mobile-nav-cta {
     justify-content: center;
+    background: linear-gradient(135deg, var(--primary), var(--tech-blue));
     border: 1px solid color-mix(in srgb, var(--primary) 52%, var(--line));
     box-shadow: 0 14px 30px rgba(169, 33, 35, 0.35);
     color: #fff;
     margin-top: 4px;
+  }
+  .mobile-nav-links .mobile-nav-cta:hover,
+  .mobile-nav-links .mobile-nav-cta:active {
+    background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 86%, #000), color-mix(in srgb, var(--tech-blue) 88%, #000));
+    color: #fff;
+  }
+  body:not(.dark) .mobile-nav-links {
+    border-color: color-mix(in srgb, var(--tech-blue) 34%, var(--line));
+    background:
+      radial-gradient(160% 120% at 0% 0%, color-mix(in srgb, var(--primary) 18%, #fff), transparent 56%),
+      linear-gradient(180deg, #ffffff, color-mix(in srgb, var(--surface-2) 92%, #fff));
+    box-shadow: 0 22px 38px rgba(17, 24, 39, 0.14);
+  }
+  body:not(.dark) .mobile-nav-links a {
+    border-color: color-mix(in srgb, var(--tech-blue) 20%, var(--line));
+    background: linear-gradient(180deg, #ffffff, color-mix(in srgb, var(--surface-2) 90%, #fff));
+    color: var(--text);
+  }
+  body:not(.dark) .mobile-nav-links a:hover,
+  body:not(.dark) .mobile-nav-links a:active {
+    background: linear-gradient(180deg, color-mix(in srgb, var(--surface) 94%, #fff), color-mix(in srgb, var(--surface-2) 96%, #fff));
+  }
+  body:not(.dark) .mobile-nav-links .mobile-nav-cta {
+    border-color: color-mix(in srgb, var(--primary) 58%, var(--line));
+    box-shadow: 0 16px 32px rgba(169, 33, 35, 0.28);
   }
   .header { width: min(1240px, calc(100% - 14px)); }
   .hero-media-overlay, .form-row, .gallery-grid { grid-template-columns: 1fr; }
