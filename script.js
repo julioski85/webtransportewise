@@ -323,12 +323,10 @@ const header = document.getElementById('siteHeader');
 const fab = document.getElementById('floatingCta');
 const fabMain = document.getElementById('fabMain');
 const fabWhatsApp = document.getElementById('fabWhatsApp');
-const testimonialTrack = document.getElementById('testimonialTrack');
-const testimonialSlider = document.getElementById('testimonialSlider');
 
 const state = {
   lang: localStorage.getItem('rt_lang') || 'en',
-  theme: localStorage.getItem('rt_theme') || 'dark'
+  theme: localStorage.getItem('rt_theme') || 'light'
 };
 
 function applyTheme(theme) {
@@ -419,43 +417,6 @@ leadForm.addEventListener('submit', (e) => {
   leadForm.reset();
 });
 
-function initTestimonialSlider() {
-  if (!testimonialTrack || !testimonialSlider || prefersReduced) return;
-  const originalItems = Array.from(testimonialTrack.children);
-  if (!originalItems.length) return;
-  originalItems.forEach((item) => {
-    const clone = item.cloneNode(true);
-    clone.setAttribute('aria-hidden', 'true');
-    testimonialTrack.appendChild(clone);
-  });
-
-  let offset = 0;
-  let rafId = null;
-  let paused = false;
-  const speed = window.innerWidth < 640 ? 0.23 : 0.34;
-  const loopWidth = testimonialTrack.scrollWidth / 2;
-
-  const tick = () => {
-    if (!paused) {
-      offset += speed;
-      if (offset >= loopWidth) offset = 0;
-      testimonialTrack.style.transform = `translateX(${-offset}px)`;
-    }
-    rafId = requestAnimationFrame(tick);
-  };
-
-  testimonialSlider.addEventListener('mouseenter', () => { paused = true; });
-  testimonialSlider.addEventListener('mouseleave', () => { paused = false; });
-  testimonialSlider.addEventListener('focusin', () => { paused = true; });
-  testimonialSlider.addEventListener('focusout', () => { paused = false; });
-
-  rafId = requestAnimationFrame(tick);
-
-  window.addEventListener('beforeunload', () => {
-    if (rafId) cancelAnimationFrame(rafId);
-  });
-}
-
 if (heroFrame && window.innerWidth > 900 && !prefersReduced) {
   heroFrame.addEventListener('mousemove', (e) => {
     const rect = heroFrame.getBoundingClientRect();
@@ -493,5 +454,3 @@ document.addEventListener('click', (e) => {
 if (window.lucide) {
   window.lucide.createIcons();
 }
-
-initTestimonialSlider();
