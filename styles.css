@@ -840,15 +840,15 @@ body.dark .lead-form input, body.dark .lead-form select, body.dark .lead-form te
     left: 14px;
     right: 14px;
     bottom: 14px;
-    gap: 10px;
+    gap: 8px;
   }
   .overlay-card {
-    padding: 14px;
-    border-radius: 16px;
+    padding: 10px 11px;
+    border-radius: 14px;
     background: linear-gradient(170deg, color-mix(in srgb, var(--surface) 94%, transparent), color-mix(in srgb, var(--surface-2) 85%, transparent));
   }
-  .overlay-card span { font-size: 0.7rem; letter-spacing: .14em; }
-  .overlay-card strong { margin-top: 8px; font-size: 1rem; line-height: 1.35; }
+  .overlay-card span { font-size: 0.6rem; letter-spacing: .12em; }
+  .overlay-card strong { margin-top: 4px; font-size: 0.78rem; line-height: 1.2; }
   .compare-table-wrap {
     border: 0;
     border-radius: 0;
